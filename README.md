@@ -1,6 +1,6 @@
 # Ansible LEMP Stack Deployment - DevOps Project
 
-## 🚀 Project Overview
+## Project Overview
 This project automates the deployment and configuration of a LEMP (Linux, Nginx, MariaDB, PHP-FPM) stack using Ansible. It demonstrates Infrastructure as Code (IaC) principles and configuration management best practices.
 
 ## ✅ What We Achieved
@@ -33,9 +33,6 @@ Host Machine (Windows + Git Bash)
 ├── Playbooks (site.yml)
 └── Variables (group_vars, host_vars)
 
-text
-
-
 ## 📁 Project Structure
 ansible-lemp-stack/
 ├── Vagrantfile # VM definitions and network config
@@ -63,9 +60,6 @@ ansible-lemp-stack/
 ├── templates/my.cnf.j2 # DB config template
 └── vars/main.yml # Database variables
 
-text
-
-
 ## 🔧 Prerequisites Installed
 - VirtualBox 7.2.4
 - Vagrant 2.4.9
@@ -75,37 +69,26 @@ text
 ## 🚦 How to Run (Linux/macOS or Windows with WSL/Docker)
 
 ### Step 1: Clone Repository
-```bash
 git clone https://github.com/Kartik27baliyan/ansible-lemp-stack.git
 cd ansible-lemp-stack
 Step 2: Start Virtual Machines
-Bash
-
 vagrant up
 # Creates 2 VMs: web01 (192.168.56.10) and db01 (192.168.56.11)
 Step 3: Run Ansible Playbook
 Option A: Using Docker (Windows compatible)
-Bash
-
 docker run --rm -it \\
   -v $(pwd):/ansible \\
   -w /ansible \\
   williamyeh/ansible:alpine3 \\
   ansible-playbook playbooks/site.yml
 Option B: Using WSL (Recommended for Windows)
-Bash
-
 # In WSL Ubuntu terminal
 sudo apt update
 sudo apt install ansible
 ansible-playbook playbooks/site.yml
 Option C: Linux/macOS Native
-Bash
-
 ansible-playbook playbooks/site.yml
 Step 4: Verify Deployment
-Bash
-
 # Test web server
 curl http://192.168.56.10
 # Should show PHP info page
