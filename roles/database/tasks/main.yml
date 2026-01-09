@@ -1,0 +1,60 @@
+---
+- name: Install MariaDB server
+  apt:
+    name: mariadb-server
+    state: present
+
+- name: Start and enable MariaDB service
+  service:
+    name: mariadb
+    state: started
+    enabled: yes
+
+- name: Update MySQL root password
+  mysql_user:
+    name: root
+    password: "{{ mysql_root_password }}"
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+    check_implicit_admin: yes
+
+- name: Remove anonymous MySQL users
+  mysql_user:
+    name: ''
+    host_all: yes
+    state: absent
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+
+- name: Remove MySQL test database
+  mysql_db:
+    name: test
+    state: absent
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+
+- name: Create application database
+  mysql_db:
+    name: "{{ app_database_name }}"
+    state: present
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+
+- name: Create application database user
+  mysql_user:
+    name: "{{ app_database_user }}"
+    password: "{{ app_database_password }}"
+    priv: "{{ app_database_name }}.*:ALL"
+    host: '%'
+    state: present
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+
+- name: Flush privileges
+  mysql_user:
+    name: root
+    host: '%'
+    password: "{{ mysql_root_password }}"
+    priv: '*.*:ALL,GRANT'
+    state: present
+    login_user: root
+    login_password: "{{ mysql_root_password }}"

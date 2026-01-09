@@ -1,0 +1,15 @@
+---
+# Common variables for all hosts
+timezone: UTC
+common_packages:
+  - curl
+  - git
+  - vim
+  - htop
+  - net-tools
+
+# Database variables
+mysql_root_password: "root_password_123"  # We'll encrypt this later with Ansible Vault
+app_database_name: myappdb
+app_database_user: myappuser
+app_database_password: "app_password_123"  # We'll encrypt this later with Ansible Vault

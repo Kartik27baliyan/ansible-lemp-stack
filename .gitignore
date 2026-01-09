@@ -1,0 +1,59 @@
+# Ansible specific
+*.retry
+.vault_pass.txt
+vault.yml
+vault_password.txt
+ansible.cfg.local
+
+# Vagrant
+.vagrant/
+*.log
+Vagrantfile.local
+
+# VirtualBox
+*.vdi
+*.vmdk
+*.nvram
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Icon?
+.DS_Store
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.orig
+
+# Python
+__pycache__/
+*.pyc
+.python-version
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Miscellaneous
+*.log
+*.tmp
+*.bak
+*.pid
+*.seed
+*.pid.lock
+*.tgz
+*.tar.gz
+*.zip

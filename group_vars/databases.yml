@@ -1,0 +1,5 @@
+---
+# Database server specific variables
+mariadb_version: "10.3"
+mariadb_bind_address: "0.0.0.0"
+mariadb_port: 3306

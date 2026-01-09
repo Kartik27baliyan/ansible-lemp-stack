@@ -1,0 +1,49 @@
+---
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Install PHP and required modules
+  apt:
+    name:
+      - php-fpm
+      - php-mysql
+      - php-cli
+      - php-curl
+      - php-gd
+      - php-mbstring
+      - php-xml
+      - php-zip
+    state: present
+
+- name: Start and enable Nginx service
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+- name: Start and enable PHP-FPM service
+  service:
+    name: php7.4-fpm
+    state: started
+    enabled: yes
+
+- name: Create web root directory
+  file:
+    path: /var/www/html
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0755'
+
+- name: Deploy test PHP page
+  copy:
+    dest: /var/www/html/index.php
+    content: |
+      <?php
+      phpinfo();
+      ?>
+    owner: www-data
+    group: www-data
+    mode: '0644'
