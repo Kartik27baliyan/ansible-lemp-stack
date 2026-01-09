@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - name: Check hostname
+      shell: hostname
+      register: hostname_output
+    
+    - name: Display hostname
+      debug:
+        msg: "Hostname is {{ hostname_output.stdout }}"

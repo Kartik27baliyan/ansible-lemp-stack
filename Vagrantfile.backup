@@ -7,9 +7,10 @@ Vagrant.configure("2") do |config|
   config.vm.box_check_update = false
   
   # Disable default shared folder (we'll use Ansible instead)
-  config.vm.synced_folder ".", "/vagrant"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
   
   # Configure plugin for VirtualBox Guest Additions
+  config.vbguest.auto_update = false
   
   # Web Server VM
   config.vm.define "web01" do |web|

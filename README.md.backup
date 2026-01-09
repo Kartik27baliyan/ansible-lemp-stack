@@ -1,0 +1,68 @@
+# Ansible LEMP Stack Deployment
+
+## Project Status
+✅ Project structure created  
+✅ VirtualBox and Vagrant installed  
+✅ VMs created and running (web01 @ 192.168.56.10, db01 @ 192.168.56.11)  
+⚠️ Ansible on Windows (Python 3.13) has compatibility issues  
+✅ Workaround: Use Docker or WSL for Ansible execution
+
+## What Works
+- Vagrant VMs are fully operational
+- SSH connectivity between host and VMs
+- Project structure with Ansible roles and playbooks
+- All configuration files are ready
+
+## Issues Encountered
+1. Ansible on Windows with Python 3.13 has blocking I/O issues
+2. Terminal inside VMs has input issues (common VirtualBox problem)
+
+## Solutions Demonstrated
+1. **Vagrant Configuration**: Automated VM provisioning
+2. **Ansible Best Practices**: Role-based structure, inventory management
+3. **Troubleshooting**: Handling plugin errors, network configuration
+
+## Project Files
+ansible-lemp-stack/
+├── Vagrantfile # VM configuration
+├── ansible.cfg # Ansible configuration
+├── inventory/hosts.ini # Host inventory
+├── playbooks/site.yml # Main playbook
+├── roles/ # Ansible roles
+│ ├── common/ # Common configuration
+│ ├── webserver/ # Nginx + PHP setup
+│ └── database/ # MariaDB setup
+└── group_vars/ # Group variables
+
+## How to Run (On Linux/macOS or Windows with WSL/Docker)
+```bash
+# 1. Clone repository
+git clone https://github.com/Kartik27baliyan/ansible-lemp-stack.git
+cd ansible-lemp-stack
+
+# 2. Start VMs
+vagrant up
+
+# 3. Run Ansible (using Docker if on Windows)
+docker run --rm -it \
+  -v $(pwd):/ansible \
+  -w /ansible \
+  williamyeh/ansible:alpine3 \
+  ansible-playbook playbooks/site.yml
+
+# 4. Verify deployment
+curl http://192.168.56.10
+Skills Demonstrated
+Infrastructure as Code (Vagrant)
+Configuration Management (Ansible)
+LEMP Stack Deployment
+Troubleshooting and Problem Solving
+Documentation
+Next Steps
+To complete this project on Windows:
+
+Install WSL and run Ansible from there
+OR use Docker containers for Ansible
+OR downgrade to Python 3.9
+Contact
+Kartik Baliyan - GitHub: @Kartik27baliyan
