@@ -54,4 +54,22 @@ ansible-lemp-stack/
     └── database/
         └── tasks/
             └── main.yml
-'EOF'
+```
+## Quick Start 
+# 1. Clone repository
+git clone https://github.com/Username/ansible-lemp-stack.git
+cd Foldername
+
+# 2. Start VMs
+vagrant up
+
+# 3. Run Ansible playbook
+ansible-playbook playbooks/site.yml
+
+# 4. Verify deployment
+curl http://IP Address 
+
+Project Status
+✅ Project structure created
+🚧 Need to install VirtualBox, Vagrant, and Ansible
+🚧 Need to test Vagrant VMs
