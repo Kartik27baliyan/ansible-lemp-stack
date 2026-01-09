@@ -107,33 +107,57 @@ Solution: Use SSH from host or Docker containers for execution
 
 🎯 Learning Outcomes
 Infrastructure as Code: Automated VM provisioning with Vagrant
+
 Configuration Management: Idempotent server configuration with Ansible
+
 Role-Based Architecture: Modular, reusable Ansible roles
+
 Inventory Management: Dynamic inventory with variables
+
 Troubleshooting: Real-world problem-solving with DevOps tools
+
 Documentation: Comprehensive project documentation
+
 📈 Skills Demonstrated
+
 ✅ Vagrant VM management
+
 ✅ Ansible playbook development
+
 ✅ Role-based configuration
+
 ✅ YAML configuration files
+
 ✅ SSH key management
+
 ✅ Network configuration
+
 ✅ Problem-solving and debugging
+
 ✅ Project documentation
+
 🔄 Future Enhancements
+
 Add Ansible Vault for secure credentials
+
 Implement CI/CD pipeline (GitHub Actions)
+
 Add monitoring (Prometheus + Grafana)
+
 Containerize with Docker
+
 Multi-environment deployment (dev/stage/prod)
+
 📝 Notes for Windows Users
 This project was developed on Windows with:
-
 Git Bash for terminal
+
 VirtualBox for virtualization
+
 Vagrant for VM management
+
 WSL/Docker recommended for Ansible execution
+
 👨‍💻 Author
 Kartik Baliyan
 
