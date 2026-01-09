@@ -3,23 +3,23 @@
 ## Project Overview
 This project automates the deployment and configuration of a LEMP (Linux, Nginx, MariaDB, PHP-FPM) stack using Ansible. It demonstrates Infrastructure as Code (IaC) principles and configuration management best practices.
 
-## ✅ What We Achieved
+##  What We Achieved
 
 ### Infrastructure Setup
-- ✅ **VirtualBox 7.2.4** installed and configured
-- ✅ **Vagrant 2.4.9** installed and working
-- ✅ **2 Ubuntu 20.04 VMs** provisioned:
+- **VirtualBox 7.2.4** installed and configured
+-  **Vagrant 2.4.9** installed and working
+-  **2 Ubuntu 20.04 VMs** provisioned:
   - web01 (192.168.56.10) - Web server
   - db01 (192.168.56.11) - Database server
-- ✅ **VM Networking** configured (private network 192.168.56.x)
-- ✅ **SSH Access** working between host and VMs
+- **VM Networking** configured (private network 192.168.56.x)
+-  **SSH Access** working between host and VMs
 
 ### Ansible Configuration
-- ✅ **Project Structure** following Ansible best practices
-- ✅ **Roles-based architecture** (common, webserver, database)
-- ✅ **Inventory management** with group_vars and host_vars
-- ✅ **Playbooks** for orchestration
-- ✅ **Idempotent configurations** implemented
+-  **Project Structure** following Ansible best practices
+-  **Roles-based architecture** (common, webserver, database)
+-  **Inventory management** with group_vars and host_vars
+-  **Playbooks** for orchestration
+-  **Idempotent configurations** implemented
 
 ## 🛠️ Technical Architecture
 Host Machine (Windows + Git Bash)
@@ -105,7 +105,7 @@ Challenge 3: Terminal Input Issues in VMs
 Issue: Input problems in VirtualBox terminal
 Solution: Use SSH from host or Docker containers for execution
 
-🎯 Learning Outcomes
+ Learning Outcomes
 Infrastructure as Code: Automated VM provisioning with Vagrant
 
 Configuration Management: Idempotent server configuration with Ansible
@@ -120,21 +120,21 @@ Documentation: Comprehensive project documentation
 
 📈 Skills Demonstrated
 
-✅ Vagrant VM management
+ Vagrant VM management
 
-✅ Ansible playbook development
+ Ansible playbook development
 
-✅ Role-based configuration
+ Role-based configuration
 
-✅ YAML configuration files
+ YAML configuration files
 
-✅ SSH key management
+ SSH key management
 
-✅ Network configuration
+ Network configuration
 
-✅ Problem-solving and debugging
+ Problem-solving and debugging
 
-✅ Project documentation
+ Project documentation
 
 🔄 Future Enhancements
 
